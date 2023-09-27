@@ -29,7 +29,6 @@ function TVlist {
 	echo "---------------------------------------------" >> $completedTV
 
 	sed -e 's/jortpool/-/; s/LabStorage/-/; s/Media/-/; s/Movies/-/;' $rawTV >>  $completedTV
-
 }
 
 function movielist {
@@ -66,3 +65,5 @@ gamelist
 
 cls
 echo "it worked! do you want a cookie or something?"
+sleep 2
+exit 0
