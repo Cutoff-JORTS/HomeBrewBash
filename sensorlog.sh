@@ -7,6 +7,7 @@ while true; do
   date > $log
   echo "---------------------" > $log
   sensors > $log
+  docker ps --all > $log
   sleep 1
 done
 
