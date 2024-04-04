@@ -6,14 +6,16 @@
 
 read -p "Please enter the IP address of your target network (ex: 192.168.50.0): " TargetNetwork
 
+mkdir /tmp/jortscan
 
-$TargetList='/tmp/jortscan/targets.list'
+touch /tmp/jortscan/targets.list
+
 
 echo "Thank you. Now scanning: $TargetNetwork/24 (all addresses in range 0 - 255)..."
 
 nmap -n -sn $TargetNetwork/24 | grep "Nmap scan" | cut -d" " -f5 > /tmp/jortscan/targets.list
 
-echo "Succesful scan. Target list available in $TargetList ."
+echo "Succesful scan. Target list available in /tmp/jortscan ."
 echo "-----------------------------------------------"
 echo "File Details: "
 ls -al /tmp/jortscan/ | grep targets.list
