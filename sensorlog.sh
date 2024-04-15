@@ -46,7 +46,7 @@ echo " " >>$log
   echo "*******************" >> $log
   echo "ACTIVE CONNECTIONS:" >>$log
   echo "*******************" >> $log
-	sudo netstat -pano | grep ESTABLISHED | awk '{print $4, $5, $7, $8, $9}' > /tmp/ports.list ; sed -i 's/ /....../g' /tmp/ports.list && cat /tmp/ports.list >> $log
+	sudo netstat -pano | grep ESTABLISHED | awk '{print $4, $5, $7, $8, $9}' > /tmp/ports.list ; sed -i 's/ /\t/g' /tmp/ports.list && cat /tmp/ports.list >> $log
 echo " " >>$log
 
 #Check Filesystems
